@@ -8,7 +8,6 @@ group :development, :production, :test do
 end
 group :production do
   gem 'pg'
-  gem 'sqlite3'
 end
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -43,6 +42,10 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
+end
+
+group :test do
+  gem 'sqlite3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
