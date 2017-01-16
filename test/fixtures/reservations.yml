@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_start: 2017-01-16 19:59:37
+  date_stop: 2017-01-16 19:59:37
+  user_id: 1
+  room_id: 1
+
+two:
+  date_start: 2017-01-16 19:59:37
+  date_stop: 2017-01-16 19:59:37
+  user_id: 1
+  room_id: 1

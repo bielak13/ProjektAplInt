@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>City:</strong>
+  <%= @build.city %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @build.street %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @build.number %>
+</p>
+
+<%= link_to 'Edit', edit_build_path(@build) %> |
+<%= link_to 'Back', builds_path %>
