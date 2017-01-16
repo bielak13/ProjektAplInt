@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Demo</title>
+  <title>Rezerwacja sal</title>
   <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -15,6 +15,7 @@
     </div>
 <% end %>
 
+<%= link_to 'Strona główna', new_user_session_path %>
 <%= link_to 'Login', new_user_session_path %>
 
 <%= yield %>
