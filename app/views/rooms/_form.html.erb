@@ -16,15 +16,16 @@
     <%= f.number_field :number %>
   </div>
 
-  <div class="field">
-    <%= f.label :type_id %>
-    <%= f.number_field :type_id %>
-  </div>
+    <div class="field">
+      <%= f.label :Typ %><br>
+      <%= collection_select(:room, :type_id, Type.all, :id, :name) %>
+    </div>
 
-  <div class="field">
-    <%= f.label :room_id %>
-    <%= f.number_field :room_id %>
-  </div>
+    <div class="field">
+      <%= f.label :Budynek %><br>
+      <%= collection_select(:room, :build_id, Build.all, :id, :adres) %>
+    </div>
+
 
   <div class="actions">
     <%= f.submit %>
