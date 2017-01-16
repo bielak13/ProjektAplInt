@@ -15,7 +15,11 @@
     </div>
 <% end %>
 
-<%= link_to 'Strona główna', new_user_session_path %>
+<%= link_to "Rezerwacje sal", reservations_path, :method => :get %>
+<%= link_to "Budynki", builds_path, :method => :get %>
+<%= link_to "Sale", rooms_path, :method => :get %>
+<%= link_to "Typy sal", types_path, :method => :get %>
+<%= link_to "Wyloguj", destroy_user_session_path, :method => :delete %>
 <%= link_to 'Login', new_user_session_path %>
 
 <%= yield %>
