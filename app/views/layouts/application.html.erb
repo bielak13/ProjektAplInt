@@ -15,12 +15,28 @@
     </div>
 <% end %>
 
-<%= link_to "Rezerwacje sal", reservations_path, :method => :get %>
-<%= link_to "Budynki", builds_path, :method => :get %>
-<%= link_to "Sale", rooms_path, :method => :get %>
-<%= link_to "Typy sal", types_path, :method => :get %>
-<%= link_to "Wyloguj", destroy_user_session_path, :method => :delete %>
-<%= link_to 'Login', new_user_session_path %>
+<% if current_user%>
+    <% if current_user.admin==true %>
+        Witaj <%= current_user.email %>
+        <%= link_to "Rezerwacje", reservations_path, :method => :get %>
+        <%= link_to "Budynki", builds_path, :method => :get %>
+        <%= link_to "Sale", rooms_path, :method => :get %>
+        <%= link_to "Typy sal", types_path, :method => :get %>
+        <%= link_to "Wyloguj", destroy_user_session_path, :method => :delete %>
+
+    <% else %>
+        Witaj <%= current_user.email %>
+        <%= link_to "Rezerwacje", reservations_path, :method => :get %>
+        <%= link_to "Budynki", builds_path, :method => :get %>
+        <%= link_to "Sale", rooms_path, :method => :get %>
+        <%= link_to "Typy sal", types_path, :method => :get %>
+        <%= link_to "Wyloguj", destroy_user_session_path, :method => :delete %>
+    <% end %>
+
+<% else %>
+    <%= link_to 'Zaloguj się', new_user_session_path %></br>
+<% end %>
+
 
 <%= yield %>
 
