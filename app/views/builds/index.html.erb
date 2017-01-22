@@ -1,28 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Builds</h1>
+<h1>Budynki</h1>
 
 <table>
   <thead>
     <tr>
-      <th>City</th>
-      <th>Street</th>
-      <th>Number</th>
+      <th>Miejscowość</th>
+      <th>Ulica</th>
+      <th>Numer</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @builds.each do |build| %>
-      <tr>
-        <td><%= build.city %></td>
-        <td><%= build.street %></td>
-        <td><%= build.number %></td>
-        <td><%= link_to 'Show', build %></td>
-        <td><%= link_to 'Edit', edit_build_path(build) %></td>
-        <td><%= link_to 'Destroy', build, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <% if current_user.admin==true %>
+      <% @builds.each do |build| %>
+          <tr>
+            <td><%= build.city %></td>
+            <td><%= build.street %></td>
+            <td><%= build.number %></td>
+            <td><%= link_to 'Pokaż', build %></td>
+            <td><%= link_to 'Edytuj', edit_build_path(build) %></td>
+            <td><%= link_to 'Usuń', build, method: :delete, data: { confirm: 'Usunąć?' } %></td>
+          </tr>
+      <% end %>
+  <% else %>
+      <% @builds.each do |build| %>
+          <tr>
+            <td><%= build.city %></td>
+            <td><%= build.street %></td>
+            <td><%= build.number %></td>
+            <td><%= link_to 'Pokaż', build %></td>
+          </tr>
+      <% end %>
+  <% end %>
   </tbody>
 </table>
 
